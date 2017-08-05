@@ -1,4 +1,4 @@
-# zmirror
+# z-mirror
 
 > a magic mirror done my way
 

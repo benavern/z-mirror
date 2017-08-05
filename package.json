@@ -1,6 +1,6 @@
 {
-  "name": "zmirror",
-  "productName": "zmirror",
+  "name": "z-mirror",
+  "productName": "z-mirror",
   "version": "0.0.0",
   "author": "Benjamin Caradeuc <bencrdc@gmail.com>",
   "description": "a magic mirror done my way",

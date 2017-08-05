@@ -8,7 +8,7 @@
   import Clock from './Clock/Clock'
 
   export default {
-    name: 'landing-page',
+    name: 'z-mirror',
     components: { Clock }
   }
 </script>

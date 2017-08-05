@@ -8,7 +8,7 @@
   import ZMirror from '@/components/ZMirror'
 
   export default {
-    name: 'zmirror',
+    name: 'app',
     components: {
       ZMirror
     }
