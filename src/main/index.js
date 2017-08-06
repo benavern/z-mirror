@@ -19,8 +19,8 @@ const winURL = process.env.NODE_ENV === 'development'
 
 function createWindow () {
   let windowConfig = {
-    height: 800,
-    width: 600,
+    height: devEnv ? 1440 : 960,
+    width: devEnv ? 900 : 600,
     x: 0,
     y: 0,
     darktheme: true,
