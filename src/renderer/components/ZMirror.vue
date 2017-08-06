@@ -3,7 +3,11 @@
     <div class="region top-left">
       <clock></clock>
     </div>
-    <div class="region top-right"></div>
+
+    <div class="region top-right">
+      <weather></weather>
+    </div>
+
     <div class="region middle-left"></div>
     <div class="region middle-right"></div>
     <div class="region bottom-left"></div>
@@ -13,10 +17,14 @@
 
 <script>
   import Clock from './Clock/Clock'
+  import Weather from './Weather/Weather'
 
   export default {
     name: 'z-mirror',
-    components: { Clock }
+    components: {
+      Clock,
+      Weather
+    }
   }
 </script>
 
@@ -45,6 +53,7 @@
       &.top-right
         top: 0
         left: 100% / $horizontal
+        text-align: right
 
       &.middle-left
         top: 100% / $vertical
@@ -52,6 +61,7 @@
       &.middle-right
         top: 100% / $vertical
         left: 100% / $horizontal
+        text-align: right
 
       &.bottom-left
         top: 2 * 100% / $vertical
@@ -59,5 +69,6 @@
       &.bottom-right
         top: 2 * 100% / $vertical
         left: 100% / $horizontal
+        text-align: right
 
 </style>

@@ -21,6 +21,9 @@
 
 <style lang="sass">
 
+  $big-text: 4rem
+  $large-text: 2rem
+
   @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700')
 
   *

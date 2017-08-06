@@ -14,6 +14,7 @@
       return {
         time: '',
         date: '',
+        now: null,
         clockTimer: null
       }
     },
@@ -26,9 +27,9 @@
     },
     methods: {
       updateClock () {
-        const now = moment()
-        this.time = now.format('HH:mm')
-        this.date = now.format('dddd D MMM YYYY')
+        this.now = moment()
+        this.time = this.now.format('HH:mm')
+        this.date = this.now.format('dddd D MMM YYYY')
       },
       startClock () {
         this.clockTimer = setInterval(this.updateClock, 1000)
