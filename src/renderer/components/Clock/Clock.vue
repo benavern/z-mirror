@@ -27,7 +27,6 @@
     methods: {
       updateClock () {
         const now = moment()
-        console.log(now)
         this.time = now.format('HH:mm')
         this.date = now.format('dddd D MMM YYYY')
       },
