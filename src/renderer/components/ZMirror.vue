@@ -52,12 +52,12 @@
       &.middle-right
         top: 100% / $vertical
         left: 100% / $horizontal
-        
+
       &.bottom-left
         top: 2 * 100% / $vertical
         left: 0
       &.bottom-right
         top: 2 * 100% / $vertical
         left: 100% / $horizontal
-      
+
 </style>

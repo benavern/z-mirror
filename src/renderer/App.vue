@@ -31,7 +31,7 @@
   html
     font-size: 20px
 
-  body 
+  body
     font-family: "Quicksand", sans-serif
     background-color: #000
     line-height: 1.3
