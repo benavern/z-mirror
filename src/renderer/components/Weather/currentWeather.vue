@@ -1,7 +1,8 @@
 <template>
   <div id="current-weather">
     <div class="big-temp">
-      <i :class="['icon', 'owf', `owf-${icon}-${iconSuffix}`]"></i>
+      <!-- <i :class="['icon', 'owf', `owf-${icon}-${iconPeriod}`]"></i> -->
+      <i :class="['wi', `wi-owm-${iconPeriod}-${icon}`]"></i>
       <span class="temperature">{{ temp }}</span>°C
     </div>
     <div class="location">{{ location }}</div>
@@ -24,7 +25,7 @@ export default {
       location: 'Vern-sur-Seiche',
       temp: '...',
       icon: '950',
-      iconSuffix: 'd',
+      iconPeriod: 'day',
       mintemp: '...',
       maxtemp: '...',
       now: null,
@@ -46,7 +47,7 @@ export default {
             this.mintemp = obj.main.temp_min
             this.maxtemp = obj.main.temp_max
             this.icon = obj.weather[0].id
-            this.iconSuffix = (this.now > obj.sys.sunrise && this.now < obj.sys.sunset) ? 'd' : 'n'
+            this.iconPeriod = (this.now > obj.sys.sunrise && this.now < obj.sys.sunset) ? 'day' : 'night'
           }
         })
         .catch(() => { console.log('[CURRENT WEATHER] FETCH ERROR') })
