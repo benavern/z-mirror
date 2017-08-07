@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper">
+  <div id="wrapper":class="{ debug }">
     <div class="region top left">
       <clock></clock>
     </div>
@@ -27,6 +27,11 @@
       Clock,
       Weather,
       ChuckNorrisFacts
+    },
+    data () {
+      return {
+        debug: process.env.NODE_ENV === 'development'
+      }
     }
   }
 </script>
@@ -47,8 +52,6 @@
       width: 100% / $horizontal
       height: 100% / $vertical
       padding: 1rem
-      // ##### Debug ####
-      border: 1px solid pink
 
       &.top
         top: 0
@@ -69,4 +72,9 @@
       &.full
         left: 0!important
         width: 100%
+
+  // ##### Debug ####
+  .debug
+    .region
+      border: 1px solid pink
 </style>
