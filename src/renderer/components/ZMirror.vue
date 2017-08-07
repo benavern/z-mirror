@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper":class="{ debug }">
+  <div id="wrapper">
     <div class="region top left">
       <clock></clock>
     </div>
@@ -8,7 +8,7 @@
       <weather></weather>
     </div>
 
-    <div class="region middle center"></div>
+    <!-- <div class="region middle center"></div> -->
 
     <div class="region bottom full">
        <chuck-norris-facts></chuck-norris-facts>
@@ -27,11 +27,6 @@
       Clock,
       Weather,
       ChuckNorrisFacts
-    },
-    data () {
-      return {
-        debug: process.env.NODE_ENV === 'development'
-      }
     }
   }
 </script>
@@ -73,8 +68,4 @@
         left: 0!important
         width: 100%
 
-  // ##### Debug ####
-  .debug
-    .region
-      border: 1px solid pink
 </style>
