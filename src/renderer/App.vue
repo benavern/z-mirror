@@ -20,11 +20,10 @@
 </script>
 
 <style lang="sass">
+  @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Sue+Ellen+Francisco')
 
-  $big-text: 4rem
-  $large-text: 2rem
-
-  @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700')
+  $font-sans-serif: "Quicksand", sans-serif
+  $font-cursive: 'Sue Ellen Francisco', cursive
 
   *
     box-sizing: border-box
@@ -35,8 +34,20 @@
     font-size: 20px
 
   body
-    font-family: "Quicksand", sans-serif
+    font-family: $font-sans-serif
     background-color: #000
-    line-height: 1.3
+    line-height: 1.6
+
+  .align-left
+    text-align: left
+  .align-center
+    text-align: center
+  .align-right
+    text-align: right
+
+  .font-sans-serif
+    font-family: $font-sans-serif
+  .font-cursive
+    font-family: $font-cursive
 
 </style>

@@ -44,7 +44,7 @@
 <style lang="sass" scoped>
   #clock
     .time
-      font-size: 3rem
+      font-size: 5rem
       font-weight: lighter
     .date
       color: #ccc

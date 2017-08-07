@@ -1,29 +1,32 @@
 <template>
   <div id="wrapper">
-    <div class="region top-left">
+    <div class="region top left">
       <clock></clock>
     </div>
 
-    <div class="region top-right">
+    <div class="region top right align-right">
       <weather></weather>
     </div>
 
-    <div class="region middle-left"></div>
-    <div class="region middle-right"></div>
-    <div class="region bottom-left"></div>
-    <div class="region bottom-right"></div>
+    <div class="region middle center"></div>
+
+    <div class="region bottom full">
+       <chuck-norris-facts></chuck-norris-facts>
+    </div>
   </div>
 </template>
 
 <script>
   import Clock from './Clock/Clock'
   import Weather from './Weather/Weather'
+  import ChuckNorrisFacts from './ChuckNorrisFacts/ChuckNorrisFacts'
 
   export default {
     name: 'z-mirror',
     components: {
       Clock,
-      Weather
+      Weather,
+      ChuckNorrisFacts
     }
   }
 </script>
@@ -47,28 +50,23 @@
       // ##### Debug ####
       border: 1px solid pink
 
-      &.top-left
+      &.top
         top: 0
-        left: 0
-      &.top-right
-        top: 0
-        left: 100% / $horizontal
-        text-align: right
-
-      &.middle-left
+      &.middle
         top: 100% / $vertical
-        left: 0
-      &.middle-right
-        top: 100% / $vertical
-        left: 100% / $horizontal
-        text-align: right
+      &.bottom
+        // top: 2 * 100% / $vertical
+        bottom: 0
 
-      &.bottom-left
-        top: 2 * 100% / $vertical
+      &.left
         left: 0
-      &.bottom-right
-        top: 2 * 100% / $vertical
-        left: 100% / $horizontal
-        text-align: right
+      &.center
+        left: 100% / 2 / $horizontal
+      &.right
+        // left: 100% / $horizontal
+        right: 0
 
+      &.full
+        left: 0!important
+        width: 100%
 </style>

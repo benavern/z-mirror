@@ -26,7 +26,10 @@ function createWindow () {
     darktheme: true,
     useContentSize: true,
     fullscreen: devEnv,
-    autoHideMenuBar: devEnv
+    autoHideMenuBar: devEnv,
+    webPreferences: {
+      webSecurity: false
+    }
   }
 
   /**

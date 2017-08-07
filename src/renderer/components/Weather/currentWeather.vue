@@ -49,6 +49,7 @@ export default {
             this.iconSuffix = (this.now > obj.sys.sunrise && this.now < obj.sys.sunset) ? 'd' : 'n'
           }
         })
+        .catch(() => { console.log('[CURRENT WEATHER] FETCH ERROR') })
     }
   }
 }
