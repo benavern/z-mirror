@@ -1,0 +1,33 @@
+{
+  "weather": {
+    "api": {
+      "key": "1d616f35aa933bb39712bd855cb7d0c6",
+      "baseUrl": "http://api.openweathermap.org/data/2.5/weather"
+    },
+    "location": "Vern-sur-Seiche",
+    "defaultIcon": 950,
+    "defaultIconPeriod": "day",
+    "units": "metric",
+    "updateInterval": 3600000
+  },
+  "forecast": {
+    "api": {
+      "key": "1d616f35aa933bb39712bd855cb7d0c6",
+      "baseUrl": "http://api.openweathermap.org/data/2.5/forecast/daily"
+    },
+    "location": "Vern-sur-Seiche",
+    "defaultIcon": 950,
+    "defaultIconPeriod": "day",
+    "units": "metric",
+    "limit": 5,
+    "updateInterval": 3600000
+  },
+  "chuckNorris": {
+    "api": {
+      "baseUrl": "http://www.chucknorrisfacts.fr/api/get"
+    },
+    "orderby": "alea",
+    "limit": 1,
+    "updateInterval": 3600000
+  }
+}

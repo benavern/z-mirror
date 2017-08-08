@@ -1,53 +1,49 @@
 <template>
-  <div id="current-weather">
+  <div id="current-weather" v-if="loaded">
     <div class="big-temp">
-      <!-- <i :class="['icon', 'owf', `owf-${icon}-${iconPeriod}`]"></i> -->
-      <i :class="['wi', `wi-owm-${iconPeriod}-${icon}`]"></i>
+      <i :class="['icon', 'wi', `wi-owm-${iconPeriod}-${icon}`]"></i>
       <span class="temperature">{{ temp }}</span>°C
     </div>
     <div class="location">{{ location }}</div>
-    <div class="min-max">
-      <span class="min">&#9660; {{ mintemp }}°C</span>
-      &nbsp;
-      <span class="max">&#9650; {{ maxtemp }}°C</span>
-    </div>
   </div>
 </template>
 
 <script>
 import moment from 'moment'
+import { weather as config } from '../../../config.json'
+import { EventBus } from '../../eventBus.js'
 
 export default {
   name: 'currentWeather',
   data () {
     return {
-      apikey: '1d616f35aa933bb39712bd855cb7d0c6',
-      location: 'Vern-sur-Seiche',
-      temp: '...',
-      icon: '950',
-      iconPeriod: 'day',
-      mintemp: '...',
-      maxtemp: '...',
+      url: config.api.baseUrl + `?q=${config.location}&units=${config.units}&appid=${config.api.key}`,
       now: null,
-      weatherTimer: null
+      weatherTimer: null,
+      location: config.location,
+      loaded: false,
+      temp: 0,
+      icon: config.defaultIcon,
+      iconPeriod: 'day'
     }
   },
   mounted () {
+    EventBus.$on('update:currentweather', this.getWeather)
+    this.weatherTimer = setInterval(this.getWeather, config.updateInterval || (60 * 60 * 1000))
     this.getWeather()
-    this.weatherTimer = setInterval(this.getWeather, 60 * 60 * 1000) // 1h
   },
   methods: {
     getWeather () {
+      console.log('[GET] current weather')
       this.now = moment().unix()
-      this.$http.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.location}&appid=${this.apikey}&units=metric`)
+      this.$http.get(this.url)
         .then(res => {
           if (res.data) {
             const obj = res.data
             this.temp = obj.main.temp
-            this.mintemp = obj.main.temp_min
-            this.maxtemp = obj.main.temp_max
             this.icon = obj.weather[0].id
             this.iconPeriod = (this.now > obj.sys.sunrise && this.now < obj.sys.sunset) ? 'day' : 'night'
+            this.loaded = true
           }
         })
         .catch(() => { console.log('[CURRENT WEATHER] FETCH ERROR') })
@@ -61,15 +57,11 @@ export default {
     .big-temp
       font-size: 3rem
       .icon
-        margin-right: 1rem
+        margin-right: .3em
 
       .temperature
         font-weight: bold
 
     .location
       color: #ccc
-
-    .min-max
-      color: #eee
-      font-size: 1.5rem
 </style>

@@ -1,16 +1,19 @@
 <template>
   <div>
     <current-weather></current-weather>
+    <forecast></forecast>
   </div>
 </template>
 
 <script>
-import currentWeather from './currentWeather'
+import CurrentWeather from './CurrentWeather'
+import Forecast from './Forecast'
 
 export default {
   name: 'weather',
   components: {
-    currentWeather
+    CurrentWeather,
+    Forecast
   }
 }
 </script>
