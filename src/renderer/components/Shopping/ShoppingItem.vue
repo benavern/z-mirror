@@ -22,6 +22,7 @@ export default {
     margin-left: .5em
 
   &.done
+    color: #999
     .text
       text-style: crossed
       font-style: italic
