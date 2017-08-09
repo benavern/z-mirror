@@ -4,10 +4,10 @@
   },
   "weather": {
     "api": {
-      "key": "OPENWEATHERMAPKEY",
+      "key": "[[OPENWEATHERMAP_APP_ID]]",
       "baseUrl": "http://api.openweathermap.org/data/2.5/weather"
     },
-    "location": "OPENWEATHERMAPCITYNAME",
+    "location": "[[OPENWEATHERMAPCITYNAME]]",
     "defaultIcon": 950,
     "defaultIconPeriod": "day",
     "units": "metric",
@@ -15,10 +15,10 @@
   },
   "forecast": {
     "api": {
-      "key": "OPENWEATHERMAPKEY",
+      "key": "[[OPENWEATHERMAP_APP_ID]]",
       "baseUrl": "http://api.openweathermap.org/data/2.5/forecast/daily"
     },
-    "location": "OPENWEATHERMAPCITYNAME",
+    "location": "[[OPENWEATHERMAP_CITY_NAME]]",
     "defaultIcon": 950,
     "defaultIconPeriod": "day",
     "units": "metric",
@@ -32,5 +32,11 @@
     "orderby": "alea",
     "limit": 1,
     "updateInterval": 600000
+  },
+  "shopping": {
+    "api": {
+      "baseUrl": "[[Z_MIRROR_API]]/shopping"
+    },
+    "updateInterval": 900000
   }
 }

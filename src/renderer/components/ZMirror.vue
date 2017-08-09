@@ -8,7 +8,9 @@
       <weather></weather>
     </div>
 
-    <!-- <div class="region middle center"></div> -->
+    <div class="region middle right align-right">
+      <shopping></shopping>
+    </div>
 
     <div class="region bottom full">
        <chuck-norris-facts></chuck-norris-facts>
@@ -20,13 +22,15 @@
   import Clock from './Clock/Clock'
   import Weather from './Weather/Weather'
   import ChuckNorrisFacts from './ChuckNorrisFacts/ChuckNorrisFacts'
+  import Shopping from './Shopping/Shopping'
 
   export default {
     name: 'z-mirror',
     components: {
       Clock,
       Weather,
-      ChuckNorrisFacts
+      ChuckNorrisFacts,
+      Shopping
     }
   }
 </script>
