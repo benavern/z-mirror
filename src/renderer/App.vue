@@ -46,6 +46,14 @@
         if (config.sound) this.bip()
         EventBus.$emit('update:chucknorrisfacts')
       })
+      Mousetrap.bind('s', () => {
+        if (config.sound) this.bip()
+        EventBus.$emit('update:shopping')
+      })
+      Mousetrap.bind('p', () => {
+        if (config.sound) this.bip()
+        EventBus.$emit('update:postit')
+      })
     },
     methods: {
       bip () {
