@@ -93,6 +93,16 @@ let rendererConfig = {
             name: 'fonts/[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.(wav)(\?.*)?$/,
+        use: {
+          loader: 'url-loader',
+          query: {
+            limit: 10000,
+            name: 'sounds/[name].[ext]'
+          }
+        }
       }
     ]
   },
