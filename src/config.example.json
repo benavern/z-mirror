@@ -1,10 +1,10 @@
 {
   "weather": {
     "api": {
-      "key": "1d616f35aa933bb39712bd855cb7d0c6",
+      "key": "OPENWEATHERMAPKEY",
       "baseUrl": "http://api.openweathermap.org/data/2.5/weather"
     },
-    "location": "Vern-sur-Seiche",
+    "location": "OPENWEATHERMAPCITYNAME",
     "defaultIcon": 950,
     "defaultIconPeriod": "day",
     "units": "metric",
@@ -12,10 +12,10 @@
   },
   "forecast": {
     "api": {
-      "key": "1d616f35aa933bb39712bd855cb7d0c6",
+      "key": "OPENWEATHERMAPKEY",
       "baseUrl": "http://api.openweathermap.org/data/2.5/forecast/daily"
     },
-    "location": "Vern-sur-Seiche",
+    "location": "OPENWEATHERMAPCITYNAME",
     "defaultIcon": 950,
     "defaultIconPeriod": "day",
     "units": "metric",
@@ -28,6 +28,6 @@
     },
     "orderby": "alea",
     "limit": 1,
-    "updateInterval": 3600000
+    "updateInterval": 600000
   }
 }
