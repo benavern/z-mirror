@@ -9,6 +9,7 @@
   import ZMirror from '@/components/ZMirror'
   import { EventBus } from './eventBus.js'
   import Mousetrap from 'mousetrap'
+  import { general as config } from '../config.json'
 
   export default {
     name: 'app',
@@ -26,23 +27,23 @@
 
       // event bus
       Mousetrap.bind('space', () => {
-        this.bip.play()
+        if(config.sound) this.bip.play()
         EventBus.$emit('update:currentweather')
         EventBus.$emit('update:forecast')
         EventBus.$emit('update:chucknorrisfacts')
       })
 
       Mousetrap.bind('w', () => {
-        this.bip.play()
+        if(config.sound) this.bip.play()
         EventBus.$emit('update:currentweather')
       })
 
       Mousetrap.bind('f', () => {
-        this.bip.play()
+        if(config.sound) this.bip.play()
         EventBus.$emit('update:forecast')
       })
       Mousetrap.bind('c', () => {
-        this.bip.play()
+        if(config.sound) this.bip.play()
         EventBus.$emit('update:chucknorrisfacts')
       })
     }

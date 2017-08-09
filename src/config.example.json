@@ -1,4 +1,7 @@
 {
+  "general": {
+    "sound": true
+  },
   "weather": {
     "api": {
       "key": "OPENWEATHERMAPKEY",

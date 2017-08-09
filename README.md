@@ -4,6 +4,10 @@
 
 > a magic mirror done my way
 
+#### screenshot
+
+![screenshot](/static/screenshot.png)
+
 Trying to reproduce this:
 
 ![screenshot](https://www.raspberrypi.org/app/uploads/2014/04/heyhandsome.jpg)
@@ -55,12 +59,18 @@ xserver-command=X -s 0 -dpms
 # install dependencies
 npm install # or yarn
 
+# create a config.json file in src
+cp src/config.example.json src/config.json
+# edit it the way you need
+
 # serve with hot reload at localhost:9080
 npm run dev # or yarn run dev
 
 # build electron application
-npm run build:raspi # or yarn run build:raspi 
-# don't know why it does not work directly on the raspbery so I built the app on my personnal computer & `scp` the build on my raspberry pi
+npm run build:raspi # or yarn run build:raspi
+# don't know why it does not work directly on the raspbery 
+# so I built the app on my personnal computer
+# then `scp` the build on my raspberry pi
 
 
 # lint all JS/Vue component files in `src/`
