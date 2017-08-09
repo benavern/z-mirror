@@ -8,6 +8,10 @@
       <weather></weather>
     </div>
 
+    <div class="region middle left">
+      <postit></postit>
+    </div>
+
     <div class="region middle right align-right">
       <shopping></shopping>
     </div>
@@ -23,6 +27,7 @@
   import Weather from './Weather/Weather'
   import ChuckNorrisFacts from './ChuckNorrisFacts/ChuckNorrisFacts'
   import Shopping from './Shopping/Shopping'
+  import Postit from './Postit/Postit'
 
   export default {
     name: 'z-mirror',
@@ -30,7 +35,8 @@
       Clock,
       Weather,
       ChuckNorrisFacts,
-      Shopping
+      Shopping,
+      Postit
     }
   }
 </script>

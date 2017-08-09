@@ -1,0 +1,54 @@
+<template>
+  <div id="postit" v-if="list.length">
+    <div class="list">
+      <postit-item v-for="(item, index) in list"
+                      :key="index"
+                      :item="item">
+      </postit-item>
+    </div>
+  </div>
+</template>
+
+<script>
+import PostitItem from './PostitItem'
+import { postit as config } from '../../../config.json'
+import { EventBus } from '../../eventBus.js'
+
+export default {
+  name: 'postit',
+  components: { PostitItem },
+  data () {
+    return {
+      list: [],
+      postitTimer: null
+    }
+  },
+  mounted () {
+    EventBus.$on('update:postit', this.getPostit)
+    this.postitTimer = setInterval(this.getPostit, config.updateInterval || (60 * 60 * 1000)) // 1h
+    this.getPostit()
+  },
+  methods: {
+    getPostit () {
+      console.log('[GET] postit list')
+      this.$http.get(config.api.baseUrl)
+        .then(res => {
+          if (res.data) {
+            this.list = res.data.list
+          }
+        })
+        .catch((err) => { console.log('[POSTIT] FETCH ERROR', err) })
+    }
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+  #postit
+    font-size: .5rem
+  .list
+    display: grid
+    grid-auto-flow: columns
+    grid-template-columns: repeat(2, 1fr)
+
+</style>

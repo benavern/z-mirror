@@ -38,5 +38,11 @@
       "baseUrl": "[[Z_MIRROR_API]]/shopping"
     },
     "updateInterval": 900000
+  },
+  "postit": {
+    "api": {
+      "baseUrl": "[[Z_MIRROR_API]]/postit"
+    },
+    "updateInterval": 900000
   }
 }
