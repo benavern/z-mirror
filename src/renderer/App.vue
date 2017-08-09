@@ -27,23 +27,23 @@
 
       // event bus
       Mousetrap.bind('space', () => {
-        if(config.sound) this.bip.play()
+        if (config.sound) this.bip.play()
         EventBus.$emit('update:currentweather')
         EventBus.$emit('update:forecast')
         EventBus.$emit('update:chucknorrisfacts')
       })
 
       Mousetrap.bind('w', () => {
-        if(config.sound) this.bip.play()
+        if (config.sound) this.bip.play()
         EventBus.$emit('update:currentweather')
       })
 
       Mousetrap.bind('f', () => {
-        if(config.sound) this.bip.play()
+        if (config.sound) this.bip.play()
         EventBus.$emit('update:forecast')
       })
       Mousetrap.bind('c', () => {
-        if(config.sound) this.bip.play()
+        if (config.sound) this.bip.play()
         EventBus.$emit('update:chucknorrisfacts')
       })
     }
