@@ -49,7 +49,7 @@ export default {
     font-size: .8rem
     display: inline-block
     border: 1px dotted #ccc
-    padding: 1rem 1rem 2rem
+    padding: 1rem 1rem
 
     .list
       margin: 1em .3em

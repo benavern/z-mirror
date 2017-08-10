@@ -45,10 +45,15 @@ export default {
 
 <style lang="sass" scoped>
   #postit
-    font-size: .5rem
+    font-size: .6rem
+    height: 100%
   .list
-    display: grid
-    grid-auto-flow: columns
-    grid-template-columns: repeat(2, 1fr)
+    height: 100%
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-content: stretch
+    align-items: flex-start
 
 </style>
