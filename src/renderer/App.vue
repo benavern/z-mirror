@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <button @click="bip"></button>
     <z-mirror></z-mirror>
   </div>
 </template>
