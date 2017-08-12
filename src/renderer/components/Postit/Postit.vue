@@ -1,9 +1,10 @@
 <template>
   <div id="postit" v-if="list.length">
     <div class="list">
-      <postit-item v-for="(item, index) in list"
-                      :key="index"
-                      :item="item">
+      <postit-item v-for="item in list"
+                      :key="item.id"
+                      :done="item.done">
+        {{ item.content }}
       </postit-item>
     </div>
   </div>
@@ -34,10 +35,10 @@ export default {
       this.$http.get(config.api.baseUrl)
         .then(res => {
           if (res.data) {
-            this.list = res.data.list
+            this.list = res.data.data
           }
         })
-        .catch((err) => { console.log('[POSTIT] FETCH ERROR', err) })
+        .catch((err) => { console.error('[POSTIT] FETCH ERROR', err) })
     }
   }
 }

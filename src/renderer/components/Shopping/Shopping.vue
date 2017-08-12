@@ -35,10 +35,10 @@ export default {
       this.$http.get(config.api.baseUrl)
         .then(res => {
           if (res.data) {
-            this.list = res.data.list
+            this.list = res.data.data
           }
         })
-        .catch((err) => { console.log('[SHOPPING] FETCH ERROR', err) })
+        .catch((err) => { console.error('[SHOPPING] FETCH ERROR', err) })
     }
   }
 }
