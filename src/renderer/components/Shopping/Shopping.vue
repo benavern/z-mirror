@@ -2,7 +2,7 @@
   <div id="shopping" v-if="list.length">
     <h3>Liste de courses</h3>
     <div class="list">
-      <shopping-item v-for="(item, index) in list"
+      <shopping-item v-for="(item, index) in orderedList"
                       :key="index"
                       :item="item">
       </shopping-item>
@@ -22,6 +22,11 @@ export default {
     return {
       list: [],
       shoppingTimer: null
+    }
+  },
+  computed: {
+    orderedList () {
+      return this.list.sort((a, b) => a.id > b.id)
     }
   },
   mounted () {

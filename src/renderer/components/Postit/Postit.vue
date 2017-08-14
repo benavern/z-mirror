@@ -1,7 +1,7 @@
 <template>
   <div id="postit" v-if="list.length">
     <div class="list">
-      <postit-item v-for="item in list"
+      <postit-item v-for="item in orderedList"
                       :key="item.id"
                       :done="item.done">
         {{ item.content }}
@@ -22,6 +22,11 @@ export default {
     return {
       list: [],
       postitTimer: null
+    }
+  },
+  computed: {
+    orderedList () {
+      return this.list.sort((a, b) => a.id > b.id)
     }
   },
   mounted () {
