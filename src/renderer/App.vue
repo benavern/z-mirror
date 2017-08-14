@@ -32,6 +32,8 @@
         EventBus.$emit('update:currentweather')
         EventBus.$emit('update:forecast')
         EventBus.$emit('update:chucknorrisfacts')
+        EventBus.$emit('update:shopping')
+        EventBus.$emit('update:postit')
       })
       Mousetrap.bind('w', () => {
         if (config.sound) this.bip()
