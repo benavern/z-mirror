@@ -8,10 +8,6 @@
 
 ![screenshot](/static/screenshot.png)
 
-Trying to reproduce this:
-
-![screenshot](https://www.raspberrypi.org/app/uploads/2014/04/heyhandsome.jpg)
-
 ## Requirements
 
 * 1 Raspbery PI
@@ -20,6 +16,10 @@ Trying to reproduce this:
 * 1 One-way mirror (I built it)
 * Some time and a lot of courage
 
+You'll probably want to be able to have the shopping list & the postits : there are some more things to do: 
+
+* create your instance of the [z-mirror-api](https://github.com/benavern/z-mirror-api)
+* host the [z-mirror-app](https://github.com/benavern/z-mirror-app) (don't forget to put some security on it)
 ## Raspbery pi settings
 
 I used a fresh install of raspbian (July 2017 - kernel 4.9)
@@ -77,6 +77,36 @@ npm run build:raspi # or yarn run build:raspi
 npm run lint # or yarn run lint
 
 ```
+
+# Photos
+
+<details>
+  <summary>Construction du mirroir</summary>
+  
+  ![01](/static/01.jpg)
+
+  ![02](/static/02.jpg)
+
+  ![03](/static/03.jpg)
+
+  ![04](/static/04.jpg)
+
+  ![05](/static/05.jpg)
+
+  ![06](/static/06.jpg)
+
+  ![07](/static/07.jpg)
+
+  ![08](/static/08.jpg)
+
+</details>
+
+## Why
+This project is part of my z-mirror project
+
+* [The web app](https://github.com/benavern/z-mirror-app)
+* [The web api](https://github.com/benavern/z-mirror-api)
+
 
 ---
 
