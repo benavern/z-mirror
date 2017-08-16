@@ -81,8 +81,8 @@ npm run lint # or yarn run lint
 # Photos
 
 <details>
-  <summary>Construction du mirroir</summary>
-  
+  <summary>Click to see pictures of the mirror building process</summary>
+
   ![01](/static/01.jpg)
 
   ![02](/static/02.jpg)
