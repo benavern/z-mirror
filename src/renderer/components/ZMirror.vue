@@ -17,7 +17,8 @@
     </div>
 
     <div class="region bottom full">
-       <chuck-norris-facts></chuck-norris-facts>
+       <!-- <chuck-norris-facts></chuck-norris-facts> -->
+       <photos></photos>
     </div>
   </div>
 </template>
@@ -25,18 +26,18 @@
 <script>
   import Clock from './Clock/Clock'
   import Weather from './Weather/Weather'
-  import ChuckNorrisFacts from './ChuckNorrisFacts/ChuckNorrisFacts'
   import Shopping from './Shopping/Shopping'
   import Postit from './Postit/Postit'
+  import Photos from './Photos/Photos'
 
   export default {
     name: 'z-mirror',
     components: {
       Clock,
       Weather,
-      ChuckNorrisFacts,
       Shopping,
-      Postit
+      Postit,
+      Photos
     }
   }
 </script>

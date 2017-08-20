@@ -2,6 +2,9 @@
   "general": {
     "sound": true
   },
+  "clock": {
+    "showSeconds": true
+  },
   "weather": {
     "api": {
       "key": "[[OPENWEATHERMAP_APP_ID]]",
@@ -44,5 +47,12 @@
       "baseUrl": "[[Z_MIRROR_API]]/postit"
     },
     "updateInterval": 900000
+  },
+  "photos": {
+    "api": {
+      "baseUrl": "[[Z_MIRROR_API]]/photos"
+    },
+    "updateInterval": 900000,
+    "carouselInterval": 10000
   }
 }
