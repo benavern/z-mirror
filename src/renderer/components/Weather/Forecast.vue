@@ -1,12 +1,25 @@
 <template>
-  <div id="forecast">
-    <div class="forecast-item" v-for="item in data" :key="item.dt">
-      <span class="day">{{ item.day }}</span>
-      <i :class="['icon','wi', `wi-owm-${item.icon}`]"></i>
-      <span class="temperature">&#9660; {{ item.minTemp }}</span>°C
-      <span class="temperature">&#9650; {{ item.maxTemp }}</span>°C
-    </div>
-  </div>
+  <table id="forecast" v-if="data.length" align="right">
+    <tr>
+      <th v-for="item in data" :key="item.dt">{{ item.day }}</th>
+    </tr>
+    <tr>
+      <td v-for="item in data" :key="item.dt">
+        <i :class="['icon','wi', `wi-owm-${item.icon}`]"></i>
+      </td>
+    </tr>
+    <tr>
+      <td v-for="item in data" :key="item.dt">
+        <span class="temperature">&#9660; {{ item.minTemp }}</span>°C
+      </td>
+    </tr>
+    <tr>
+      <td v-for="item in data" :key="item.dt">
+        <span class="temperature">&#9650; {{ item.maxTemp }}</span>°C
+      </td>
+    </tr>
+
+  </table>
 </template>
 
 <script>
@@ -55,10 +68,14 @@ export default {
 <style lang="sass" scoped>
   #forecast
     margin-top: 1.5rem
-    font-size: .9rem
+    font-size: .8rem
+    td, th
+      text-align: center
+      padding: 0 .3rem
+
+    th
+      font-weight: bold
+
     .icon
       margin: .5em
-
-    .day
-      font-weight: bold
 </style>

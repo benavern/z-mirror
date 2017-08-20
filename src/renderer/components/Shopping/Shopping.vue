@@ -51,9 +51,10 @@ export default {
 
 <style lang="sass" scoped>
   #shopping
-    font-size: .8rem
+    font-size: .6rem
     display: inline-block
     border: 1px dotted #ccc
+    border-radius: .5em
     padding: 1rem 1rem
 
     .list
