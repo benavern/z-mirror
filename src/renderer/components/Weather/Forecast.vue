@@ -69,13 +69,16 @@ export default {
   #forecast
     margin-top: 1.5rem
     font-size: .8rem
+    border-collapse: collapse
+
     td, th
       text-align: center
-      padding: 0 .3rem
+      padding: .1rem .3rem
+
+      &:not(:last-child)
+        border-right: 1px dashed #333
 
     th
       font-weight: bold
 
-    .icon
-      margin: .5em
 </style>
