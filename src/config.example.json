@@ -53,6 +53,6 @@
       "baseUrl": "[[Z_MIRROR_API]]/photos"
     },
     "updateInterval": 900000,
-    "carouselInterval": 10000
+    "carouselInterval": 30000
   }
 }

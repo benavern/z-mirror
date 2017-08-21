@@ -11,15 +11,14 @@
 <script>
 import PhotoItem from './PhotoItem'
 import { photos as config } from '../../../config.json'
+import { EventBus } from '../../eventBus.js'
 export default {
   name: 'photos',
   components: { PhotoItem },
   data () {
     return {
-      list: [
-        { url: '/static/01.jpg', title: 'Achat de l\'écran', id: 1 },
-        { url: '/static/02.jpg', id: 2 }
-      ],
+      url: config.api.baseUrl,
+      list: [],
       currentItem: 0,
       carouselTimer: null
     }
@@ -30,7 +29,8 @@ export default {
     }
   },
   mounted () {
-    this.startCarousel()
+    EventBus.$on('update:photos', this.getPhotos)
+    this.getPhotos()
   },
   methods: {
     startCarousel () {
@@ -40,6 +40,19 @@ export default {
     },
     stopCarousel () {
       clearInterval(this.carouselTimer)
+    },
+    getPhotos () {
+      console.log('[GET] photos')
+      this.stopCarousel()
+      this.$http.get(this.url)
+        .then(res => {
+          if (res.data) {
+            this.list = res.data.data
+            if (this.list.length > 1) this.startCarousel()
+            else this.currentItem = 0
+          }
+        })
+        .catch(() => { console.log('[PHOTOS] FETCH ERROR') })
     }
   }
 }

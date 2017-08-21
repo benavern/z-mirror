@@ -31,9 +31,10 @@
         if (config.sound) this.bip()
         EventBus.$emit('update:currentweather')
         EventBus.$emit('update:forecast')
-        EventBus.$emit('update:chucknorrisfacts')
+        // EventBus.$emit('update:chucknorrisfacts')
         EventBus.$emit('update:shopping')
         EventBus.$emit('update:postit')
+        EventBus.$emit('update:photos')
       })
       Mousetrap.bind('w', () => {
         if (config.sound) this.bip()
@@ -54,6 +55,10 @@
       Mousetrap.bind('p', () => {
         if (config.sound) this.bip()
         EventBus.$emit('update:postit')
+      })
+      Mousetrap.bind('a', () => {
+        if (config.sound) this.bip()
+        EventBus.$emit('update:photos')
       })
     },
     methods: {
