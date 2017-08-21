@@ -20,7 +20,8 @@ export default {
       url: config.api.baseUrl,
       list: [],
       currentItem: 0,
-      carouselTimer: null
+      carouselTimer: null,
+      photosTimer: null
     }
   },
   computed: {
@@ -31,6 +32,7 @@ export default {
   mounted () {
     EventBus.$on('update:photos', this.getPhotos)
     this.getPhotos()
+    this.photosTimer = setInterval(this.getPhotos, config.updateInterval)
   },
   methods: {
     startCarousel () {
