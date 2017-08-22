@@ -1,23 +1,22 @@
 <template>
   <div id="wrapper">
-    <div class="region top left">
+    <div class="region line-1 column-1">
       <clock></clock>
     </div>
 
-    <div class="region top right align-right">
+    <div class="region line-1 column-2 align-right">
       <weather></weather>
     </div>
 
-    <div class="region middle left">
+    <div class="region line-2 column-1 height-2">
       <postit></postit>
     </div>
 
-    <div class="region middle right align-right">
+    <div class="region line-2 column-2 height-2 align-right">
       <shopping></shopping>
     </div>
 
-    <div class="region bottom full">
-       <!-- <chuck-norris-facts></chuck-norris-facts> -->
+    <div class="region line-4 width-2">
        <photos></photos>
     </div>
   </div>
@@ -44,7 +43,7 @@
 
 <style lang="sass" scoped>
   $horizontal: 2
-  $vertical: 3
+  $vertical: 4
 
   #wrapper
     width: 100vw
@@ -59,24 +58,15 @@
       height: 100% / $vertical
       padding: 1rem
 
-      &.top
-        top: 0
-      &.middle
-        top: 100% / $vertical
-      &.bottom
-        // top: 2 * 100% / $vertical
-        bottom: 0
+      @for $i from 1 through $vertical
+        &.line-#{$i}
+          top: 100% * ($i - 1) / $vertical
+        &.height-#{$i}
+          height: 100% * $i / $vertical
 
-      &.left
-        left: 0
-      &.center
-        left: 100% / 2 / $horizontal
-      &.right
-        // left: 100% / $horizontal
-        right: 0
-
-      &.full
-        left: 0!important
-        width: 100%
-
+      @for $j from 1 through $horizontal
+        &.column-#{$j}
+          left: 100% / ($j - 1) / $horizontal
+        &.width-#{$j}
+          width: 100% * $j / $horizontal
 </style>
