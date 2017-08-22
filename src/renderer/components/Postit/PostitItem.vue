@@ -1,13 +1,19 @@
 <template>
-  <div class="postit-item">
-    <slot></slot>
+  <div class="postit-item"
+       v-html="compiledMarkdown">
   </div>
 </template>
 
 <script>
+import marked from 'marked'
 export default {
   name: 'postitItem',
-  props: ['done']
+  props: ['done', 'content'],
+  computed: {
+    compiledMarkdown () {
+      return marked(this.content)
+    }
+  }
 }
 </script>
 
@@ -22,5 +28,10 @@ export default {
   background-color: rgba(#fff, .2)
   border-radius: .3em
   box-shadow: 0 0 .5rem rgba(#fff, .5)
+  word-wrap: break-word
+
+  /deep/ a
+    color: #88a
+    text-decoration-style: dotted
 
 </style>

@@ -3,8 +3,8 @@
     <div class="list">
       <postit-item v-for="item in orderedList"
                       :key="item.id"
-                      :done="item.done">
-        {{ item.content }}
+                      :done="item.done"
+                      :content="item.content">
       </postit-item>
     </div>
   </div>

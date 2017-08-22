@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "marked": "^0.3.6",
     "moment": "^2.18.1",
     "mousetrap": "^1.6.1",
     "node-sass": "^4.5.3",
