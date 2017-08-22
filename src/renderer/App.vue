@@ -60,6 +60,14 @@
         if (config.sound) this.bip()
         EventBus.$emit('update:photos')
       })
+      Mousetrap.bind('left', () => {
+        if (config.sound) this.bip()
+        EventBus.$emit('update:photos:previous')
+      })
+      Mousetrap.bind('right', () => {
+        if (config.sound) this.bip()
+        EventBus.$emit('update:photos:next')
+      })
     },
     methods: {
       bip () {

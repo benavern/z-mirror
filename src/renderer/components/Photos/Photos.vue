@@ -31,17 +31,27 @@ export default {
   },
   mounted () {
     EventBus.$on('update:photos', this.getPhotos)
+    EventBus.$on('update:photos:previous', this.previous)
+    EventBus.$on('update:photos:next', this.next)
     this.getPhotos()
     this.photosTimer = setInterval(this.getPhotos, config.updateInterval)
   },
   methods: {
     startCarousel () {
       this.carouselTimer = setInterval(() => {
-        this.currentItem = (this.currentItem + 1) % this.list.length
+        this.next()
       }, config.carouselInterval)
     },
     stopCarousel () {
       clearInterval(this.carouselTimer)
+    },
+    next () {
+      this.currentItem = (this.currentItem + 1) % this.list.length
+      console.log(`[PHOTOS] display item #${this.currentItem}`)
+    },
+    previous () {
+      this.currentItem = ((this.currentItem - 1) < 0) ? (this.list.length - 1) : (this.currentItem - 1)
+      console.log(`[PHOTOS] display item #${this.currentItem}`)
     },
     getPhotos () {
       console.log('[GET] photos')
