@@ -14,6 +14,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '../../styles/variables'
+
 .list-item
   max-width: 400px
 
@@ -22,9 +24,9 @@ export default {
     margin-left: .5em
 
   &.done
-    color: #999
+    color: $gray
     .text
-      text-style: crossed
+      text-decoration: line-through
       font-style: italic
 
 </style>

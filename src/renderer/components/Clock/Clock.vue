@@ -47,23 +47,24 @@
 </script>
 
 <style lang="sass" scoped>
+  @import '../../styles/variables'
+
   #clock
+    padding: 1rem 0
     .time
       position: relative
       display: inline-block
       font-size: 5rem
-      font-weight: lighter
       line-height: 1
-      padding: 1rem 0
+      margin: 1rem 0
 
       .seconds
         position: absolute
         left: calc(100% + 10px)
-        top: 1rem
+        top: 0
         font-size: 2rem
-        padding: .5rem 0
-        color: #bbb
+        color: $primary
 
     .date
-      color: #ccc
+      color: $gray
 </style>

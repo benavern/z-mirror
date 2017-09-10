@@ -1,13 +1,18 @@
 <template>
-  <div class="postit-item"
-       v-html="compiledMarkdown">
-  </div>
+  <wrapper class="postit-item" top-right>
+    <div class="postit-item-content"
+          v-html="compiledMarkdown">
+    </div>
+  </wrapper>
 </template>
 
 <script>
 import marked from 'marked'
+import Wrapper from '../utils/Wrapper'
+
 export default {
   name: 'postitItem',
+  components: { Wrapper },
   props: ['done', 'content'],
   computed: {
     compiledMarkdown () {
@@ -18,20 +23,32 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import '../../styles/variables'
+
 .postit-item
   order: 0
   flex: 0 1 auto
   align-self: auto
   width: 50%
   padding: 1rem
-  margin: .5rem .5rem 0 0
-  background-color: rgba(#fff, .2)
-  border-radius: .3em
-  box-shadow: 0 0 .5rem rgba(#fff, .5)
-  word-wrap: break-word
+  margin: 1.5rem .5rem 0 0
 
-  /deep/ a
-    color: #88a
-    text-decoration-style: dotted
+  .postit-item-content
+    word-wrap: break-word
+
+    /deep/
+      a
+        color: $primary
+        text-decoration-style: dotted
+
+      h1, h2, h3
+        color: $primary
+        margin: .2em 0 .5em
+
+      hr
+        width: 80%
+        margin: 1em auto
+        border: none
+        border-top: 1px solid darken($gray, 25%)
 
 </style>

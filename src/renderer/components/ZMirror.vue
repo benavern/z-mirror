@@ -42,6 +42,9 @@
 </script>
 
 <style lang="sass" scoped>
+
+  @import '../styles/variables'
+
   $horizontal: 2
   $vertical: 4
 
@@ -49,8 +52,8 @@
     width: 100vw
     height: 100vh
     overflow: hidden
-    color: #fff
-    display: relative
+    color: $white
+    position: relative
 
     .region
       position: absolute

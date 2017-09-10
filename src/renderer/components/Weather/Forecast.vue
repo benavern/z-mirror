@@ -1,34 +1,38 @@
 <template>
-  <table id="forecast" v-if="data.length" align="right">
-    <tr>
-      <th v-for="item in data" :key="item.dt">{{ item.day }}</th>
-    </tr>
-    <tr>
-      <td v-for="item in data" :key="item.dt">
-        <i :class="['icon','wi', `wi-owm-${item.icon}`]"></i>
-      </td>
-    </tr>
-    <tr>
-      <td v-for="item in data" :key="item.dt">
-        <span class="temperature">&#9660; {{ item.minTemp }}</span>°C
-      </td>
-    </tr>
-    <tr>
-      <td v-for="item in data" :key="item.dt">
-        <span class="temperature">&#9650; {{ item.maxTemp }}</span>°C
-      </td>
-    </tr>
+  <wrapper id="forecast" class="inline" top-left bottom-right>
+    <table v-if="data.length" align="right">
+      <tr>
+        <th v-for="item in data" :key="item.dt">{{ item.day }}</th>
+      </tr>
+      <tr>
+        <td v-for="item in data" :key="item.dt" class="icon">
+          <i :class="['wi', `wi-owm-${item.icon}`]"></i>
+        </td>
+      </tr>
+      <tr>
+        <td v-for="item in data" :key="item.dt" class="temperature">
+          &#708;&nbsp;{{ item.maxTemp }}°C
+        </td>
+      </tr>
+      <tr>
+        <td v-for="item in data" :key="item.dt" class="temperature">
+          &#709;&nbsp;{{ item.minTemp }}°C
+        </td>
+      </tr>
 
-  </table>
+    </table>
+  </wrapper>
 </template>
 
 <script>
 import moment from 'moment'
 import { forecast as config } from '../../../config.json'
 import { EventBus } from '../../eventBus.js'
+import Wrapper from '../utils/Wrapper'
 
 export default {
   name: 'forecast',
+  components: { Wrapper },
   data () {
     return {
       url: config.api.baseUrl + `?q=${config.location}&cnt=${config.limit}&units=${config.units}&appid=${config.api.key}`,
@@ -66,19 +70,26 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../../styles/variables'
+
   #forecast
-    margin-top: 1.5rem
-    font-size: .8rem
-    border-collapse: collapse
+    margin-top: 1rem
+    padding: 1rem
 
-    td, th
-      text-align: center
-      padding: .1rem .3rem
+    table
+      font-size: .8rem
+      border-collapse: collapse
 
-      &:not(:last-child)
-        border-right: 1px dashed #333
+      td, th
+        text-align: center
+        padding: .1rem .3rem
+        color: $gray
 
-    th
-      font-weight: bold
+        &:not(:last-child)
+          border-right: 1px dashed darken($gray, .5)
+
+      th
+        color: $primary
+        font-weight: bolder
 
 </style>

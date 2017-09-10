@@ -78,10 +78,8 @@
 </script>
 
 <style lang="sass">
-  @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700|Sue+Ellen+Francisco')
-
-  $font-sans-serif: "Quicksand", sans-serif
-  $font-cursive: 'Sue Ellen Francisco', cursive
+  @import url('https://fonts.googleapis.com/css?family=Orbitron:400,700|Sue+Ellen+Francisco')
+  @import './styles/variables'
 
   *
     box-sizing: border-box
@@ -93,7 +91,7 @@
 
   body
     font-family: $font-sans-serif
-    background-color: #000
+    background-color: $black
     line-height: 1.6
 
   .assets

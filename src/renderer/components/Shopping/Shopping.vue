@@ -1,12 +1,18 @@
 <template>
-  <div id="shopping" v-if="list.length">
-    <h3>Liste de courses</h3>
-    <div class="list">
-      <shopping-item v-for="(item, index) in orderedList"
-                      :key="index"
-                      :item="item">
-      </shopping-item>
-    </div>
+  <div >
+    <wrapper id="shopping"
+             class="inline"
+             v-if="list.length"
+             top-right
+             bottom-left>
+      <h3 class="title">Liste de courses</h3>
+      <div class="list">
+        <shopping-item v-for="(item, index) in orderedList"
+                        :key="index"
+                        :item="item">
+        </shopping-item>
+      </div>
+    </wrapper>
   </div>
 </template>
 
@@ -14,10 +20,11 @@
 import ShoppingItem from './ShoppingItem'
 import { shopping as config } from '../../../config.json'
 import { EventBus } from '../../eventBus.js'
+import Wrapper from '../utils/Wrapper'
 
 export default {
   name: 'shopping',
-  components: { ShoppingItem },
+  components: { ShoppingItem, Wrapper },
   data () {
     return {
       list: [],
@@ -50,13 +57,16 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../../styles/variables'
+
   #shopping
     font-size: .6rem
-    display: inline-block
-    border: 1px dotted #ccc
-    border-radius: .5em
-    padding: 1rem 1rem
+    padding: 2em
+
+    .title
+      color: $primary
 
     .list
-      margin: 1em .3em
+      margin: 1em 0
+      color: $white
 </style>

@@ -1,24 +1,31 @@
 <template>
   <transition name="slide">
     <div v-show="show" class="image-item">
-      <div :class="['image-container', { 'image-with-title': !!title }]">
-        <img :src="url">
-        <div v-if="title" class="image-title font-cursive">
-          {{ title }}
+      <wrapper class="image-container inline" top-left bottom-right>
+        <div :class="['image-container', { 'image-with-title': !!title }]">
+          <img :src="url">
+          <div v-if="title" class="image-title">
+            {{ title }}
+          </div>
         </div>
-      </div>
+      </wrapper>
     </div>
   </transition>
 </template>
 
 <script>
+import Wrapper from '../utils/Wrapper'
+
 export default {
   name: 'photo-item',
+  components: { Wrapper },
   props: ['url', 'title', 'show']
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
+  @import '../../styles/variables'
+
   .slide-enter-active
     transition: all 1s ease
 
@@ -39,16 +46,19 @@ export default {
     left: 0
     width: 100%
     height: 100%
+    will-change: transform, opacity
+
+  .wrapper
+    padding: 0
 
   .image-container
     position: relative
     display: inline-block
     width: auto
-    height: 95%
-    border: .5rem solid white
+    height: 100%
 
     &.image-with-title
-      border-bottom-width: 3.5rem
+      padding-bottom: 2.5rem
 
     img
       display: block
@@ -59,14 +69,13 @@ export default {
     .image-title
       position: absolute
       left: 0
-      bottom: -3rem
+      bottom: 0
       width: 100%
       padding: .5rem 1rem
       line-height: 1
       text-align: center
-      color: #000
-      transform: rotate(-3deg)
-      font-size: 1.2rem
+      color: $primary
+      font-size: .7em
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis

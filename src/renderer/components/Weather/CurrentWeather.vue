@@ -2,7 +2,7 @@
   <div id="current-weather" v-if="loaded">
     <div class="big-temp">
       <i :class="['icon', 'wi', `wi-owm-${iconPeriod}-${icon}`]"></i>
-      <span class="temperature">{{ temp }}</span>°C
+      <span class="temperature">{{ temp }}</span> <span class="unit">°C</span>
     </div>
     <div class="location">{{ location }}</div>
   </div>
@@ -40,7 +40,7 @@ export default {
         .then(res => {
           if (res.data) {
             const obj = res.data
-            this.temp = obj.main.temp
+            this.temp = Math.round(obj.main.temp * 10) / 10
             this.icon = obj.weather[0].id
             this.iconPeriod = (this.now > obj.sys.sunrise && this.now < obj.sys.sunset) ? 'day' : 'night'
             this.loaded = true
@@ -53,15 +53,23 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../../styles/variables'
+
   #current-weather
     .big-temp
-      font-size: 3rem
+      font-size: 5rem
       .icon
         margin-right: .3em
+        font-size: .75em
+        color: $gray
 
       .temperature
         font-weight: bold
 
+      .unit
+        color: $primary
+        font-size: .5em
+
     .location
-      color: #ccc
+      color: $gray
 </style>
