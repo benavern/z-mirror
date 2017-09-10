@@ -53,6 +53,7 @@ export default {
       border-right: 1px $gray solid
       width: 2rem
       height: 2rem
+      z-index: 1
 
       &.top-left
         top: -1rem

@@ -1,5 +1,5 @@
 <template>
-  <div id="fact" class="align-center font-cursive">
+  <div id="fact" class="align-center">
     <p v-for="fact in facts" :key="fact" v-html="fact"></p>
   </div>
 </template>

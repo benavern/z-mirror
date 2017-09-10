@@ -78,8 +78,8 @@
 </script>
 
 <style lang="sass">
-  @import url('https://fonts.googleapis.com/css?family=Orbitron:400,700|Sue+Ellen+Francisco')
   @import './styles/variables'
+  @import './styles/fonts'
 
   *
     box-sizing: border-box
@@ -103,10 +103,5 @@
     text-align: center
   .align-right
     text-align: right
-
-  .font-sans-serif
-    font-family: $font-sans-serif
-  .font-cursive
-    font-family: $font-cursive
 
 </style>
