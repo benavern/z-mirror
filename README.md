@@ -6,7 +6,7 @@
 
 #### screenshot
 
-![screenshot](/static/screenshot.png)
+![screenshot](/static/screenshot2.png)
 
 ## Requirements
 
