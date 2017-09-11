@@ -6,7 +6,7 @@
              top-right
              bottom-left>
       <h3 class="title">Liste de courses</h3>
-      <div class="list">
+      <div class="list font-normal">
         <shopping-item v-for="(item, index) in orderedList"
                         :key="index"
                         :item="item">

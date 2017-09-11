@@ -1,10 +1,10 @@
 <template>
   <transition name="slide">
     <div v-show="show" class="image-item">
-      <wrapper class="image-container inline" top-left bottom-right>
+      <wrapper class="image-container inline border-primary" top-left bottom-right>
         <div :class="['image-container', { 'image-with-title': !!title }]">
           <img :src="url">
-          <div v-if="title" class="image-title">
+          <div v-if="title" class="image-title font-normal">
             {{ title }}
           </div>
         </div>
@@ -71,13 +71,19 @@ export default {
       left: 0
       bottom: 0
       width: 100%
-      padding: .5rem 1rem
-      line-height: 1
+      padding: 0 1rem
+      line-height: 2.5rem
       text-align: center
-      color: $primary
+      color: $gray
       font-size: .7em
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
+      border-top: 1px $gray solid
+
+    @each $key, $value in $colors
+      &.border-#{$key}
+        .image-title
+          border-color: $value
 
 </style>

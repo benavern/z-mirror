@@ -41,7 +41,6 @@ export default {
     position: relative
     padding: .5rem
     border: 1px $gray solid
-    border-radius: .3em
     background-color: rgba($gray, .1)
 
     &.inline
@@ -74,6 +73,12 @@ export default {
         bottom: -1rem
         left: -1rem
         transform: rotate(315deg)
+
+    @each $key, $value in $colors
+      &.border-#{$key}
+        border-color: $value
+        .wrapper-corner
+          border-color: $value
 
     .wrapper-content
       overflow: hidden

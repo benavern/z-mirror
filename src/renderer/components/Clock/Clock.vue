@@ -1,8 +1,8 @@
 <template>
   <div id="clock">
     <div class="time">
-      {{ time }}
-      <span class="seconds" ng-if="showSeconds">{{ seconds }}</span>
+      <span class="houres">{{ houres }}</span><span :class="['separator', {'hidden': seconds % 2}]">:</span><span class="minutes">{{ minutes }}</span>
+      <span class="seconds">{{ seconds }}</span>
     </div>
     <div class="date">{{ date }}</div>
   </div>
@@ -32,7 +32,8 @@
     methods: {
       updateClock () {
         this.now = moment()
-        this.time = this.now.format('HH:mm')
+        this.houres = this.now.format('HH')
+        this.minutes = this.now.format('mm')
         this.seconds = this.now.format('ss')
         this.date = this.now.format('dddd D MMM YYYY')
       },
@@ -57,6 +58,13 @@
       font-size: 5rem
       line-height: 1
       margin: 1rem 0
+
+      .separator
+        opacity: 1
+        transition: .3s opacity
+
+        &.hidden
+          opacity: 0
 
       .seconds
         position: absolute

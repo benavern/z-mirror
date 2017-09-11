@@ -58,6 +58,7 @@ export default {
   #current-weather
     .big-temp
       font-size: 4rem
+      // line-height: 1.5 * 5rem
       .icon
         margin-right: .3em
         font-size: .75em

@@ -90,7 +90,7 @@
     font-size: 20px
 
   body
-    font-family: $font-sans-serif
+    font-family: $font-custom
     background-color: $black
     line-height: 1.6
 
@@ -99,9 +99,22 @@
 
   .align-left
     text-align: left
+
   .align-center
     text-align: center
+
   .align-right
     text-align: right
+
+  .font-normal
+    font-family: $font-normal
+
+  @each $key, $value in $colors
+    .#{$key}
+      color: $value
+    .bg-#{$key}
+      background-color: $value
+    .border-#{$key}
+      border-color: $value
 
 </style>

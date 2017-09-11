@@ -1,6 +1,6 @@
 <template>
   <wrapper class="postit-item" top-right>
-    <div class="postit-item-content"
+    <div class="postit-item-content font-normal"
           v-html="compiledMarkdown">
     </div>
   </wrapper>
@@ -44,6 +44,7 @@ export default {
       h1, h2, h3
         color: $primary
         margin: .2em 0 .5em
+        font-family: $font-custom
 
       hr
         width: 80%
