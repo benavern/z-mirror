@@ -1,13 +1,16 @@
 <template>
   <transition name="slide">
     <div v-show="show" class="image-item">
-      <wrapper class="image-container inline" top-left bottom-right>
+      <wrapper class="image-wrapper inline" top-left bottom-right>
+
         <div :class="['image-container', { 'image-with-title': !!title }]">
           <img :src="url">
-          <div v-if="title" class="image-title font-normal">
-            {{ title }}
-          </div>
         </div>
+
+        <div slot="footer" v-if="title" class="image-title font-normal">
+          {{ title }}
+        </div>
+
       </wrapper>
     </div>
   </transition>
@@ -34,35 +37,26 @@ export default {
       width: 100%
       height: 100%
 
-    .wrapper
-      padding: 0
-
-    .image-container
-      position: relative
-      display: inline-block
-      width: auto
+    .image-wrapper
       height: 100%
 
-      &.image-with-title
-        padding-bottom: 2.5rem
-
-      img
-        display: block
+      .image-container
         position: relative
-        height: 100%
+        display: inline-block
         width: auto
+        height: 100%
 
-      .image-title
-        position: absolute
-        left: 0
-        bottom: 0
-        width: 100%
-        padding: 0 1rem
-        line-height: 2.5rem
-        text-align: center
-        font-size: .7em
-        white-space: nowrap
-        overflow: hidden
-        text-overflow: ellipsis
+        img
+          display: block
+          position: relative
+          height: 100%
+          width: auto
+
+
+    .image-title
+      padding: 0 1em
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
 
 </style>

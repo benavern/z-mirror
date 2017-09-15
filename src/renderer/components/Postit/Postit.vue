@@ -56,6 +56,7 @@ export default {
     font-size: .6rem
     height: 100%
     margin: -1rem 0
+
     .list
       height: 100%
       display: flex

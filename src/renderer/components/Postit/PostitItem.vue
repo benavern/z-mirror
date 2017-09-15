@@ -25,14 +25,15 @@ export default {
 <style lang="sass" scoped>
 @import '../../styles/style'
 
-.postit-item
-  order: 0
-  flex: 0 1 auto
-  align-self: auto
-  width: 50%
-  padding: 1rem
-  margin: 1.5rem .5rem 0 0
+#postit
+  .postit-item
+    order: 0
+    flex: 0 1 auto
+    align-self: auto
+    width: 50%
+    padding: 1rem
+    margin: 1.5rem .5rem 0 0
 
-  .postit-item-content
-    word-wrap: break-word
+    .postit-item-content
+      word-wrap: break-word
 </style>
