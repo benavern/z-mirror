@@ -43,7 +43,7 @@
 
 <style lang="sass" scoped>
 
-  @import '../styles/variables'
+  @import '../styles/style'
 
   $horizontal: 2
   $vertical: 4

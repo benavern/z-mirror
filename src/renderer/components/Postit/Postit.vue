@@ -50,17 +50,18 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import '../../styles/style'
+
   #postit
     font-size: .6rem
     height: 100%
     margin: -1rem 0
-  .list
-    height: 100%
-    display: flex
-    flex-direction: column
-    flex-wrap: wrap
-    justify-content: flex-start
-    align-content: stretch
-    align-items: flex-start
-
+    .list
+      height: 100%
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-content: stretch
+      align-items: flex-start
 </style>

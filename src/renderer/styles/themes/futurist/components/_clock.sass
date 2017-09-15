@@ -1,0 +1,16 @@
+#clock
+  .time
+    .separator
+      opacity: 1
+      transition: .3s opacity
+
+      &.hidden
+        opacity: 0
+
+    .seconds
+      display: block
+      position: absolute
+      left: calc(100% + 10px)
+      top: 0
+      font-size: 2rem
+      color: $primary

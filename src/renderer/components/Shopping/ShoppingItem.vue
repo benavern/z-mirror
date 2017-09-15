@@ -1,8 +1,6 @@
 <template>
   <div :class="['list-item', {'done': item.done}]">
     <span class="text">{{ item.item }}</span>
-    <span v-if="!item.done" class="icon">&#9744;</span>
-    <span v-if="item.done" class="icon">&#9745;</span>
   </div>
 </template>
 
@@ -14,19 +12,10 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '../../styles/variables'
+@import '../../styles/style'
 
 .list-item
+  min-width: 100px
   max-width: 400px
-
-  .icon
-    font-weight: bold
-    margin-left: .5em
-
-  &.done
-    color: $gray
-    .text
-      text-decoration: line-through
-      font-style: italic
 
 </style>

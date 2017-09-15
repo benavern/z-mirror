@@ -35,50 +35,17 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../../styles/variables'
+  @import '../../styles/style'
 
   .wrapper
     position: relative
     padding: .5rem
-    border: 1px $gray solid
-    background-color: rgba($gray, .1)
 
     &.inline
       display: inline-block
 
     .wrapper-corner
       position: absolute
-      background-color: $black
-      border-right: 1px $gray solid
-      width: 2rem
-      height: 2rem
-      z-index: 1
-
-      &.top-left
-        top: -1rem
-        left: -1rem
-        transform: rotate(45deg)
-
-      &.top-right
-        top: -1rem
-        right: -1rem
-        transform: rotate(135deg)
-
-      &.bottom-right
-        bottom: -1rem
-        right: -1rem
-        transform: rotate(225deg)
-
-      &.bottom-left
-        bottom: -1rem
-        left: -1rem
-        transform: rotate(315deg)
-
-    @each $key, $value in $colors
-      &.border-#{$key}
-        border-color: $value
-        .wrapper-corner
-          border-color: $value
 
     .wrapper-content
       overflow: hidden

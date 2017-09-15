@@ -57,16 +57,14 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../../styles/variables'
+  @import '../../styles/style'
 
   #shopping
     font-size: .6rem
     padding: 2em
 
-    .title
-      color: $primary
-
     .list
       margin: 1em 0
       color: $white
+      display: inline-block
 </style>

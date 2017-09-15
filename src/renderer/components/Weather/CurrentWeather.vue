@@ -53,12 +53,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../../styles/variables'
+  @import '../../styles/style'
 
   #current-weather
     .big-temp
       font-size: 4rem
-      // line-height: 1.5 * 5rem
       .icon
         margin-right: .3em
         font-size: .75em
@@ -66,10 +65,6 @@ export default {
 
       .temperature
         font-weight: bold
-
-      .unit
-        color: $primary
-        font-size: .5em
 
     .location
       color: $gray

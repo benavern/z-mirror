@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  @import '../../styles/variables'
+  @import '../../styles/style'
 
   #forecast
     margin-top: 1rem
@@ -83,13 +83,8 @@ export default {
       td, th
         text-align: center
         padding: .1rem .3rem
-        color: $gray
-
-        &:not(:last-child)
-          border-right: 1px dashed darken($gray, .5)
 
       th
-        color: $primary
         font-weight: bolder
 
 </style>

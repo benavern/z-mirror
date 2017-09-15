@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '../../styles/variables'
+@import '../../styles/style'
 
 .postit-item
   order: 0
@@ -39,7 +39,7 @@ export default {
     /deep/
       a
         color: $primary
-        text-decoration-style: dotted
+        text-decoration: none
 
       h1, h2, h3
         color: $primary
@@ -51,5 +51,4 @@ export default {
         margin: 1em auto
         border: none
         border-top: 1px solid darken($gray, 25%)
-
 </style>

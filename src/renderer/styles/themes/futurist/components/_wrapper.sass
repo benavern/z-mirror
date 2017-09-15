@@ -1,0 +1,30 @@
+.wrapper
+  border: 1px $gray solid
+  background-color: rgba($gray, .1)
+
+  .wrapper-corner
+    background-color: $black
+    border-right: 1px $gray solid
+    width: 2rem
+    height: 2rem
+    z-index: 1
+
+    &.top-left
+      top: -1rem
+      left: -1rem
+      transform: rotate(45deg)
+
+    &.top-right
+      top: -1rem
+      right: -1rem
+      transform: rotate(135deg)
+
+    &.bottom-right
+      bottom: -1rem
+      right: -1rem
+      transform: rotate(225deg)
+
+    &.bottom-left
+      bottom: -1rem
+      left: -1rem
+      transform: rotate(315deg)

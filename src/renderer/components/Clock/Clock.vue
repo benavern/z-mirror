@@ -15,7 +15,8 @@
     name: 'clock',
     data () {
       return {
-        time: '',
+        houres: '',
+        minutes: '',
         seconds: '',
         date: '',
         now: null,
@@ -48,10 +49,11 @@
 </script>
 
 <style lang="sass" scoped>
-  @import '../../styles/variables'
+  @import '../../styles/style'
 
   #clock
     padding: 1rem 0
+
     .time
       position: relative
       display: inline-block
@@ -59,20 +61,7 @@
       line-height: 1
       margin: 1rem 0
 
-      .separator
-        opacity: 1
-        transition: .3s opacity
-
-        &.hidden
-          opacity: 0
-
-      .seconds
-        position: absolute
-        left: calc(100% + 10px)
-        top: 0
-        font-size: 2rem
-        color: $primary
-
     .date
       color: $gray
+
 </style>

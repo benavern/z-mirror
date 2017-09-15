@@ -78,8 +78,7 @@
 </script>
 
 <style lang="sass">
-  @import './styles/variables'
-  @import './styles/fonts'
+  @import './styles/style'
 
   *
     box-sizing: border-box
@@ -91,6 +90,7 @@
 
   body
     font-family: $font-custom
+    color: $white
     background-color: $black
     line-height: 1.6
 
@@ -114,7 +114,5 @@
       color: $value
     .bg-#{$key}
       background-color: $value
-    .border-#{$key}
-      border-color: $value
 
 </style>

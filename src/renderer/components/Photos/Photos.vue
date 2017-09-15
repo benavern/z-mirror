@@ -1,5 +1,5 @@
 <template>
-  <div class="photos-wrapper" v-if="list.length">
+  <div id="photos" class="photos-wrapper" v-if="list.length">
     <photo-item v-for="(item, index) in orderedList" :key="item.id"
                 :url="item.url"
                 :title="item.title"
@@ -71,6 +71,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+  @import "../../styles/style"
+
   .photos-wrapper
     position: relative
     height: 100%

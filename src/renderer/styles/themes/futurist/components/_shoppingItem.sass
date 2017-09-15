@@ -1,0 +1,14 @@
+.list-item
+  &::after
+    margin-left: 1em
+    content: "\2610"
+
+  &.done
+    color: $gray
+
+    &::after
+      content: "\2611"
+
+    .text
+      text-decoration: line-through
+      font-style: italic
