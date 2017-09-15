@@ -35,20 +35,4 @@ export default {
 
   .postit-item-content
     word-wrap: break-word
-
-    /deep/
-      a
-        color: $primary
-        text-decoration: none
-
-      h1, h2, h3
-        color: $primary
-        margin: .2em 0 .5em
-        font-family: $font-custom
-
-      hr
-        width: 80%
-        margin: 1em auto
-        border: none
-        border-top: 1px solid darken($gray, 25%)
 </style>
