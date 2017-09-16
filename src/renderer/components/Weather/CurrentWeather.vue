@@ -61,7 +61,6 @@ export default {
       .icon
         margin-right: .3em
         font-size: .75em
-        color: $gray
 
       .temperature
         font-weight: bold
