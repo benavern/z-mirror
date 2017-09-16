@@ -57,24 +57,24 @@ xserver-command=X -s 0 -dpms
 
 ``` bash
 # install dependencies
-npm install # or yarn
+npm install
 
 # create a config.json file in src
 cp src/config.example.json src/config.json
 # edit it the way you need
 
 # serve with hot reload at localhost:9080
-npm run dev # or yarn run dev
+npm run dev
 
 # build electron application
-npm run build:raspi # or yarn run build:raspi
+npm run build:raspi
 # don't know why it does not work directly on the raspbery 
 # so I built the app on my personnal computer
 # then `scp` the build on my raspberry pi
 
 
 # lint all JS/Vue component files in `src/`
-npm run lint # or yarn run lint
+npm run lint
 
 ```
 
