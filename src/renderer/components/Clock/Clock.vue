@@ -61,7 +61,4 @@
       line-height: 1
       margin: 1rem 0
 
-    .date
-      color: $gray
-
 </style>
