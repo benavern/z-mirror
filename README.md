@@ -4,9 +4,17 @@
 
 > a magic mirror done my way
 
-#### screenshot
+### Screenshots
+
+#### Theme Futurist
 
 ![screenshot](/static/screenshot2.png)
+
+#### Theme Girly
+
+![screenshot](/static/screenshot3.png)
+
+#### More soon! :-)
 
 ## Requirements
 
@@ -62,6 +70,9 @@ npm install
 # create a config.json file in src
 cp src/config.example.json src/config.json
 # edit it the way you need
+
+# choose a theme by uncommenting its corresponding line in the file
+# src/renderer/styles/_theme.sass
 
 # serve with hot reload at localhost:9080
 npm run dev
