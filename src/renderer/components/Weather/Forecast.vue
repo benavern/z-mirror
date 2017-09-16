@@ -73,8 +73,8 @@ export default {
   @import '../../styles/style'
 
   #forecast
-    margin-top: 1rem
-    padding: 1rem
+    margin-top: .5rem
+    padding: .5rem
 
     table
       font-size: .8rem
