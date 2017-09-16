@@ -1,0 +1,18 @@
+#shopping
+  .list-item
+    &::after
+      margin: 0 .5em 0 1em
+      content: "\2764"
+    &.done
+      color: $gray
+
+      &::after
+        color: $primary
+        position: relative
+        display: inline-block
+        transform: scale(2) rotate(-20deg)
+
+      .text
+        text-decoration: line-through
+        text-decoration-color: $primary
+        font-style: italic

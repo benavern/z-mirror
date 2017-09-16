@@ -1,14 +1,15 @@
-.list-item
-  &::after
-    margin-left: 1em
-    content: "\2610"
-
-  &.done
-    color: $gray
-
+#shopping
+  .list-item
     &::after
-      content: "\2611"
+      margin-left: 1em
+      content: "\2610"
 
-    .text
-      text-decoration: line-through
-      font-style: italic
+    &.done
+      color: $gray
+
+      &::after
+        content: "\2611"
+
+      .text
+        text-decoration: line-through
+        font-style: italic

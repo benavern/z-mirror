@@ -65,6 +65,5 @@ export default {
 
     .list
       margin: 1em 0
-      color: $white
       display: inline-block
 </style>
