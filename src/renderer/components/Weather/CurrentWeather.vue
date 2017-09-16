@@ -65,7 +65,4 @@ export default {
 
       .temperature
         font-weight: bold
-
-    .location
-      color: $gray
 </style>
