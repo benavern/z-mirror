@@ -11,12 +11,12 @@
       </tr>
       <tr>
         <td v-for="item in data" :key="item.dt" class="temperature">
-          &#708;&nbsp;{{ item.maxTemp }}°C
+          &#x25b2;&nbsp;{{ item.maxTemp }}°C
         </td>
       </tr>
       <tr>
         <td v-for="item in data" :key="item.dt" class="temperature">
-          &#709;&nbsp;{{ item.minTemp }}°C
+          &#x25bc;&nbsp;{{ item.minTemp }}°C
         </td>
       </tr>
 
@@ -56,8 +56,8 @@ export default {
               return {
                 dt: d.dt,
                 day: moment.unix(d.dt).format('ddd'),
-                minTemp: Math.round(d.temp.min),
-                maxTemp: Math.round(d.temp.max),
+                maxTemp: ('00' + Math.round(d.temp.max)).slice(-2), // this transformation will be ok between 100 & -10 °C
+                minTemp: ('00' + Math.round(d.temp.min)).slice(-2),
                 icon: d.weather[0].id
               }
             })
@@ -84,7 +84,7 @@ export default {
         text-align: center
         padding: .1rem .3rem
 
-      th
-        font-weight: bolder
+      // th
+      //   font-weight: bolder
 
 </style>
