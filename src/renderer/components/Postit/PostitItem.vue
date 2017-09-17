@@ -31,7 +31,6 @@ export default {
     flex: 0 1 auto
     align-self: auto
     width: 50%
-    padding: 1rem
     margin: 1.5rem .5rem 0 0
 
     .postit-item-content
