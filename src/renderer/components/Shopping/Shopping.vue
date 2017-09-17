@@ -61,7 +61,6 @@ export default {
 
   #shopping
     font-size: .6rem
-    padding: 2em
 
     .list
       margin: 1em 0

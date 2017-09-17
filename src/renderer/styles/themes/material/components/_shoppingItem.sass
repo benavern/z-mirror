@@ -1,0 +1,16 @@
+#shopping
+  .list-item
+    &::after
+      margin-left: 1em
+      content: "\25EF"
+      color: $primary
+
+    &.done
+      color: $gray
+
+      &::after
+        content: "\2B24"
+
+      .text
+        text-decoration: line-through
+        font-style: italic
