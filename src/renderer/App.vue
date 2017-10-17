@@ -86,7 +86,7 @@
     padding: 0
 
   html
-    font-size: 20px
+    font-size: $font-size
 
   body
     font-family: $font-custom

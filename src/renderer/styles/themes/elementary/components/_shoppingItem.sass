@@ -1,0 +1,13 @@
+#shopping
+  .list-item
+    &::after
+      margin: 0 .5em 0 1em
+      content: "\2610"
+
+    &.done
+      &::after
+        content: "\2611"
+
+      .text
+        text-decoration: line-through
+        font-style: italic

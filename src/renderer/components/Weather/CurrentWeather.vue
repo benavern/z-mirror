@@ -61,7 +61,4 @@ export default {
       .icon
         margin-right: .3em
         font-size: .75em
-
-      .temperature
-        font-weight: bold
 </style>

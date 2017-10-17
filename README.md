@@ -18,6 +18,10 @@
 
 ![screenshot](/static/screenshot4.png)
 
+#### Theme Elementary
+
+![screenshot](/static/screenshot5.png)
+
 #### More soon! :-)
 
 ## Requirements
