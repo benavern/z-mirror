@@ -115,4 +115,7 @@
     .bg-#{$key}
       background-color: $value
 
+  ul
+    list-style-position: inside
+
 </style>

@@ -84,7 +84,4 @@ export default {
         text-align: center
         padding: .1rem .3rem
 
-      // th
-      //   font-weight: bolder
-
 </style>
