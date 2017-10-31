@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     orderedList () {
-      return this.list.sort((a, b) => a.id > b.id)
+      return this.list.sort((a, b) => a.id - b.id)
     }
   },
   mounted () {
