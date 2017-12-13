@@ -12,6 +12,71 @@
     <link rel="stylesheet" href="https://erikflowers.github.io/weather-icons/css/weather-icons.css">
   </head>
   <body>
+    <script>
+      /**
+       * SNOW
+       */
+
+      // Javascript made by http://peters1.dk/tools/snow.php //
+
+      // REMEMBER: To change the path, where snow.png is saved...
+      const snowImg = 'data:image/png;base64,R0lGODlhGAAYALMAAP////z8/PHx8ezs7Nra2tnZ2djY2NfX19XV1c/Pz8PDwwAAAMDAwAAAAAAAAAAAACH5BAEAAAwALAAAAAAYABgAQAStkMlJq6Uqa8BB7ommeNbXCUACChejHOAwfGqXTUrd7XwfYoNEQhDacIotRorAUUhGS0LSCAgSj0gcEwQgQAeHz4AgTIRdMK9Mt1Mpxj9c5tpMnTQt0c2lT/JHe1B4eSqFIihlTiUZWx4EQSkhHooWHHQKW0MkFTmYIwM2UGaMCgJOOT2pqUU5hVefM6I7NyYmqh+eJWxCKJF7nJFHXiM6ppQVZDWKI0QJA37QLREAOw=='
+
+      // EXTRA: You can adjust the numbers of snowflakes you want on each page...
+      const snowNb = 5
+
+      let snowBrowserWidth
+      let snowBrowserHeight
+
+      if (typeof (window.pageYOffset) === 'number') {
+        snowBrowserWidth = window.innerWidth
+        snowBrowserHeight = window.innerHeight
+      } else if (document.body && (document.body.scrollLeft || document.body.scrollTop)) {
+        snowBrowserWidth = document.body.offsetWidth
+        snowBrowserHeight = document.body.offsetHeight
+      } else if (document.documentElement && (document.documentElement.scrollLeft || document.documentElement.scrollTop)) {
+        snowBrowserWidth = document.documentElement.offsetWidth
+        snowBrowserHeight = document.documentElement.offsetHeight
+      } else {
+        snowBrowserWidth = 500
+        snowBrowserHeight = 500
+      }
+
+      let snowDx = []
+      let snowXp = []
+      let snowYp = []
+      let snowAm = []
+      let snowStx = []
+      let snowSty = []
+
+      for (let i = 0; i < snowNb; i++) {
+        snowDx[i] = 0
+        snowXp[i] = Math.random() * (snowBrowserWidth - 50)
+        snowYp[i] = Math.random() * snowBrowserHeight
+        snowAm[i] = Math.random() * 20
+        snowStx[i] = 0.2 + Math.random() / 10
+        snowSty[i] = 7 + Math.random()
+        document.write('<div id="snow_flake' + i + '" style="position:absolute; z-index:' + i + '"><img src="' + snowImg + '" border="0"></div>')
+      }
+
+      function SnowStart () {
+        for (let i = 0; i < snowNb; i++) {
+          snowYp[i] += snowSty[i]
+          if (snowYp[i] > snowBrowserHeight - 50) {
+            snowXp[i] = Math.random() * (snowBrowserWidth - snowAm[i] - 30)
+            snowYp[i] = 0
+            snowStx[i] = 0.2 + Math.random() / 10
+            snowSty[i] = 7 + Math.random()
+          }
+          snowDx[i] += snowStx[i]
+          document.getElementById('snow_flake' + i).style.top = snowYp[i] + 'px'
+          document.getElementById('snow_flake' + i).style.left = snowXp[i] + snowAm[i] * Math.sin(snowDx[i]) + 'px'
+        }
+        setTimeout(SnowStart, 100)
+      }
+      SnowStart()
+    </script>
+
     <div id="app"></div>
     <!-- Set `__static` path to static files in production -->
     <script>
