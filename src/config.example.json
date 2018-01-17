@@ -26,7 +26,7 @@
     "defaultIconPeriod": "day",
     "units": "metric",
     "limit": 5,
-    "updateInterval": 3600000
+    "updateInterval": 10800000
   },
   "chuckNorris": {
     "api": {
@@ -40,19 +40,19 @@
     "api": {
       "baseUrl": "[[Z_MIRROR_API]]/shopping"
     },
-    "updateInterval": 900000
+    "updateInterval": 1800000
   },
   "postit": {
     "api": {
       "baseUrl": "[[Z_MIRROR_API]]/postit"
     },
-    "updateInterval": 900000
+    "updateInterval": 10800000
   },
   "photos": {
     "api": {
       "baseUrl": "[[Z_MIRROR_API]]/photos"
     },
-    "updateInterval": 900000,
+    "updateInterval": 10800000,
     "carouselInterval": 30000
   }
 }
